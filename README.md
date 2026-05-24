@@ -8,6 +8,7 @@
 - [Monthly and Seasonal distributions](#Monthly-and-Seasonal-distributions)
 - [Time Series Decomposition](#Time-Series-Decomposition)
 - [Forecasting with ARIMA](#Forecasting-with-ARIMA)
+- [Forecasting with RNN](#Forecasting-with-RNN)
 - [Conclusion](#Conclusion)
 
 ## Data
@@ -35,12 +36,19 @@ The boxplots of pollutant levels are shown in the figure below. When grouped by 
 Grouping by season, we can observe that the median and mean of PM2.5 level are lowest in the rainy season. Furthermore, the interquartile range is narrowest in the rainy season indicating that measured data are tightly clustered. PM2.5 in the cool season shows the greatest variation as it has the largest data range and also the largest interquantile range. Be aware that outliers are not shown in these plots.\
 ![boxplots-by-season](graphs/boxplot-by-season.png) 
 
-## Forecasting with ARIMA
-?
-
 ## Time Series Decomposition
 I have decomposed changes in PM2.5 concentration levels using a multiplicative model with a yearly window size. Time series decomposition yields consistent results where the trend declines between 2016 and 2021 before it rises again around 2022 and reaches the peak in 2024. Irregular patterns are seen in seasonal and residual components between mid-2024 and mid-2025. This may correspond to missing data or unobserved factors. \
 ![time-series-decomposed](graphs/pm25-time-series-decomposed.png)
+
+## Forecasting with ARIMA
+I have trained an ARIMA model with order (1,0,7) and seasonal order (1,1,1,90) to predict PM2.5 level. The forecasting results for the last 90 days is illustrated in the figure below. \
+![ARIMA](graphs/arima.png)
+
+## Forecasting with RNN
+I have trained an PM2.5 level predicting RNN model with `input_size` = 1, `hidden_size` = 64, `num_layers` (number of layers in RNN) = 1, `output_size` = 1, `epochs` = 100 and `lr` = 0.001. Mean Squared Error was used as the loss function and ADAM as the optimizer. To predict PM2.5 lavel at date `D`, the model inputs PM2.5 levels in previous 90 days which are from `D - 90` to `D - 1`. The training loss is shown in the following plot. \
+![ARIMA](graphs/rnn-loss.png) \
+The forecast results for the last 90 days in the dataset in shown in the figure below. \
+![ARIMA](graphs/rnn-forecast.png)
 
 ## Conclusion
 ?
