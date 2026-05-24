@@ -6,6 +6,7 @@
 - [Correlation analysis](#Correlation-analysis)
 - [Autocorrelation](#Autocorrelation)
 - [Monthly and Seasonal distributions](#Monthly-and-Seasonal-distributions)
+- [Time Series Decomposition](#Time-Series-Decomposition)
 - [Forecasting with ARIMA](#Forecasting-with-ARIMA)
 - [Conclusion](#Conclusion)
 
@@ -33,6 +34,10 @@ Grouping by season, we can observe that the median and mean of PM2.5 level are l
 
 ## Forecasting with ARIMA
 ?
+
+## Time Series Decomposition
+I have decomposed changes in PM2.5 concentration levels using a multiplicative model with a yearly window size. Time series decomposition yields consistent results where the trend declines between 2016 and 2021 before it rises again around 2022 and reaches the peak in 2024. Irregular patterns are seen in seasonal and residual components between mid-2024 and mid-2025. This may correspond to missing data or unobserved factors. \
+![time-series-decomposed](graphs/pm25-time-series-decomposed.png)
 
 ## Conclusion
 ?
