@@ -23,8 +23,10 @@ As the results of correlation analysis, PM2.5 concentration correlates with PM10
 ![correlations](graphs/corr-matrix.png)
 
 ## Autocorrelation
-The figure illustrates the autocorrelation of each pollutant over 30 lags. The ACF of PM2.5 gradually decreases and becomes plateau-like, whereas that of PM10 shows a concave-up pattern between the 15th and 25th lags. Other pollutants also show similar ACF suggesting they are not stationary. \
-![acfs](graphs/acfs.png)
+The figure illustrates the autocorrelation of each pollutant over 30 lags. The ACF of PM2.5 gradually decreases and becomes plateau-like, whereas that of PM10 shows a concave-up pattern between the 15th and 25th lags. Other pollutants also show similar ACF suggesting they are not stationary over a month period. \
+![acfs](graphs/acfs-30-lags.png) \
+Examining the autocorrelation across 365 lags reveals an annual cycle with in the data. The autocorrelations turn negative around the 80th lag and become positive again before the 300th lag. The ACF graphs of other pollutants also show similar patterns differing in magnitudes. In comparison to PM2.5, PM10 exhibits more frequent but subtler fluctuations in positive autocorrelation values. This may correspond to the fluctuation observed the ACF graph over 30 lags. \
+![acfs](graphs/acfs-365-lags.png) 
 
 ## Monthly and Seasonal distributions
 To inspect monthly and seasonal trends, I have grouped PM2.5 data by month, quarter, and season. Note that there are only 3 seasons in Thailand. For easier grouping, the cool season spans from Nov to Feb, the hot season from Mar to May and the rainy season from Jun to Oct. The definition here may not reflect the actual seasonal variations when the data were observed. \
