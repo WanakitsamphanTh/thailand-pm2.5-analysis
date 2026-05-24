@@ -5,13 +5,14 @@
 - [Data](#Data)
 - [Correlation analysis](#Correlation-analysis)
 - [Autocorrelation](#Autocorrelation)
-- [Monthly and Seasonal distribution](#Monthly-and-Seasonal-distribution)
+- [Monthly and Seasonal distributions](#Monthly-and-Seasonal-distributions)
 - [Forecasting with ARIMA](#Forecasting-with-ARIMA)
+- [Conclusion](#Conclusion)
 
 ## Data
-The data consist of PM2.5, PM10, O₃, and NO₂ concentrations measured from 2016-01-01 to 2026-05-01. The graphs below show the trends over the 10-year period. \
+The data consist of PM2.5, PM10, O₃, and NO₂ concentrations measured from 2016-01-01 to 2026-05-01. The graphs below show the trends over the 10-year period. From the graph, there are noticeable irregular changes between 2024 and 2025, which may be due to missing data. \
 ![graph](graphs/time-series.png) \
-The following figures show boxplots for each pollutant concentration. \
+The following figures show boxplots for each pollutant concentration. We can see that PM2.5 concentrations have the narrowest range in 2022 and 2024. The median and mean were also lowest in 2022. \
 ![boxplot](graphs/boxplot-by-year.png) \
 The pairplots below illustrate the relationships among the pollutants. From the graphs, it can be observed that all pollutants are positively correlated with one another. \
 ![pairplot](graphs/pairplots.png)
@@ -23,8 +24,15 @@ As the results of correlation analysis, PM2.5 concentration correlates with PM10
 ## Autocorrelation
 ?
 
-## Monthly and Seasonal distribution
-?
+## Monthly and Seasonal distributions
+To inspect monthly and seasonal trends, I have grouped PM2.5 data by month, quarter, and season. Note that there are only 3 seasons in Thailand. For easier grouping, the cool season spans from Nov to Feb, the hot season from Mar to May and the rainy season from Jun to Oct. The definition here may not reflect the actual seasonal variations when the data were observed. \
+The boxplots of pollutant levels are shown in the figure below. When grouped by month, both the median and mean PM2.5 concentrations gradually decline from January to June, then rise again from July to December. It is also noticeable that the whiskers become shorter toward the middle of the year, which is in rainy season. \
+![boxplots-by-month](graphs/boxplot-by-month.png) \
+Grouping by season, we can observe that the median and mean of PM2.5 level are lowest in the rainy season. Furthermore, the interquartile range is narrowest in the rainy season indicating that measured data are tightly clustered. PM2.5 in the cool season shows the greatest variation as it has the largest data range and also the largest interquantile range. Be aware that outliers are not shown in these plots.\
+![boxplots-by-season](graphs/boxplot-by-season.png) 
 
 ## Forecasting with ARIMA
+?
+
+## Conclusion
 ?
